@@ -20,6 +20,7 @@ const setupWebhook = async () => {
 }
 
 app.get("/createApplicant", async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*")
   const newApplicant = await onfido.applicant.create({
     firstName: "Jane",
     lastName: "Doe",
